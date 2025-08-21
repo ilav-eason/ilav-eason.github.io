@@ -50,6 +50,9 @@ exclude:
   - _drafts
 
 collections:
+  posts:
+    output: true
+    permalink: /:collection/:year-:month-:day-:title:output_ext
   pages:
     output: true
     permalink: /:collection/:path/
