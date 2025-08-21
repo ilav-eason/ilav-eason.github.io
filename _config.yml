@@ -1,16 +1,16 @@
 # Configurations
-title:            Jekyll Gitbook
-longtitle:        Jekyll Gitbook
-author:           HE Tao
-email:            sighingnow@gmail.com
+title:            Ilav‘s Gitbook
+longtitle:        Ilav‘s Gitbook
+author:           ilav
+email:            easonilav@gmail.com
 description: >
-  Build Jekyll site with the GitBook style.
+  This is a Jekyll site with the GitBook style written by ilav.
 
 version:          1.0
 gitbook_version:  3.2.3
 
-url:              'https://sighingnow.github.io'
-baseurl:          '/jekyll-gitbook'
+url:              'https://ilav-eason.github.io'
+baseurl:          ""
 rss:              RSS
 
 # bootstrap: use the remote theme for the site itself
