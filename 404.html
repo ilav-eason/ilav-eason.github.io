@@ -1,23 +1,315 @@
 ---
 layout: home
+permalink: /404.html
 ---
 
 <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
+  .error-container {
+    margin: 0 auto;
+    max-width: 700px;
+    text-align: center;
+    padding: 40px 20px;
+    min-height: calc(100vh - 200px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .error-code {
+    font-size: 8em;
+    font-weight: 800;
+    color: #42b983;
+    margin: 0;
+    line-height: 1;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    animation: bounce 2s infinite alternate;
+  }
+
+  .error-title {
+    font-size: 2.5em;
+    margin: 20px 0 10px 0;
+    color: #333;
+    font-weight: 600;
+    letter-spacing: -1px;
+  }
+
+  .error-description {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 40px;
+    line-height: 1.6;
+    max-width: 500px;
+  }
+
+  .error-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: #42b983;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(66, 185, 131, 0.3);
+  }
+
+  .btn-primary:hover {
+    background: #369970;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(66, 185, 131, 0.4);
+    color: white;
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: transparent;
+    color: #666;
+    text-decoration: none;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+
+  .btn-secondary:hover {
+    border-color: #42b983;
+    color: #42b983;
+    transform: translateY(-1px);
+  }
+
+  .error-illustration {
+    margin: 30px 0;
+    opacity: 0.6;
+  }
+
+  .search-suggestion {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 30px;
+    max-width: 500px;
+    width: 100%;
+  }
+
+  .search-suggestion h3 {
+    margin: 0 0 10px 0;
+    color: #333;
+    font-size: 1.1em;
+  }
+
+  .search-suggestion p {
+    margin: 0 0 15px 0;
+    color: #666;
+    font-size: 0.95em;
+  }
+
+  .search-box {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .search-input {
+    flex: 1;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+
+  .search-input:focus {
+    border-color: #42b983;
+  }
+
+  .search-btn {
+    padding: 10px 16px;
+    background: #42b983;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .search-btn:hover {
+    background: #369970;
+  }
+
+  .helpful-links {
+    margin-top: 40px;
+    text-align: left;
+  }
+
+  .helpful-links h3 {
+    margin: 0 0 15px 0;
+    color: #333;
+    font-size: 1.1em;
     text-align: center;
   }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
+
+  .links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .link-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    color: #666;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+  }
+
+  .link-item:hover {
+    background: #f8f9fa;
+    color: #42b983;
+    border-color: #e9ecef;
+  }
+
+  @keyframes bounce {
+    0% { transform: translateY(0px); }
+    100% { transform: translateY(-20px); }
+  }
+
+  @media (max-width: 600px) {
+    .error-code {
+      font-size: 6em;
+    }
+    
+    .error-title {
+      font-size: 2em;
+    }
+    
+    .error-description {
+      font-size: 1.1em;
+    }
+
+    .error-actions {
+      flex-direction: column;
+    }
+
+    .links-grid {
+      grid-template-columns: 1fr;
+    }
   }
 </style>
 
-<div class="container">
-  <h1>404 NOT FOUND</h1>
+<div class="error-container">
+  <div class="error-code">404</div>
+  
+  <h1 class="error-title">页面未找到</h1>
+  
+  <p class="error-description">
+    抱歉，您访问的页面不存在或已被移动。这可能是因为链接已过期、页面已删除，或者URL输入错误。
+  </p>
 
-  <p>this page may be deleted。。。</p>
+  <div class="error-actions">
+    <a href="/" class="btn-primary">
+      <i class="fa fa-home"></i>
+      返回首页
+    </a>
+    <a href="javascript:history.back()" class="btn-secondary">
+      <i class="fa fa-arrow-left"></i>
+      返回上页
+    </a>
+  </div>
+
+  <div class="error-illustration">
+    <svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" style="color: #ccc;">
+      <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+      <polyline points="3.27,6.96 12,12.01 20.73,6.96"></polyline>
+      <line x1="12" y1="22.08" x2="12" y2="12"></line>
+      <circle cx="12" cy="12" r="2" fill="currentColor"></circle>
+    </svg>
+  </div>
+
+  <div class="search-suggestion">
+    <h3><i class="fa fa-search"></i> 尝试搜索</h3>
+    <p>如果您在寻找特定内容，可以使用搜索功能：</p>
+    <div class="search-box">
+      <input type="text" class="search-input" placeholder="输入关键词搜索..." id="search-404">
+      <button class="search-btn" onclick="performSearch()">
+        <i class="fa fa-search"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="helpful-links">
+    <h3><i class="fa fa-compass"></i> 推荐页面</h3>
+    <div class="links-grid">
+      <a href="/" class="link-item">
+        <i class="fa fa-home"></i>
+        首页
+      </a>
+      <a href="/pages/about.html" class="link-item">
+        <i class="fa fa-user"></i>
+        关于
+      </a>
+      <a href="/pages/contact.html" class="link-item">
+        <i class="fa fa-envelope"></i>
+        联系
+      </a>
+      <a href="/search/" class="link-item">
+        <i class="fa fa-search"></i>
+        搜索
+      </a>
+    </div>
+  </div>
 </div>
+
+<script>
+// 搜索功能
+function performSearch() {
+  const query = document.getElementById('search-404').value.trim();
+  if (query) {
+    // 如果您的站点有搜索页面，请更新此URL
+    window.location.href = '/search/?q=' + encodeURIComponent(query);
+  }
+}
+
+// 回车键搜索
+document.getElementById('search-404').addEventListener('keypress', function(e) {
+  if (e.key === 'Enter') {
+    performSearch();
+  }
+});
+
+// 添加一些交互效果
+document.addEventListener('DOMContentLoaded', function() {
+  // 检查是否有推荐链接可用，并动态调整
+  const links = document.querySelectorAll('.link-item');
+  links.forEach(link => {
+    link.addEventListener('click', function(e) {
+      // 检查链接是否有效
+      const href = this.getAttribute('href');
+      if (href.startsWith('/') && !href.startsWith('//')) {
+        // 可以添加链接检查逻辑
+      }
+    });
+  });
+});
+</script>
