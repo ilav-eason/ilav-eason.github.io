@@ -23,7 +23,7 @@ title: Home
   .hero-title {
     font-size: 3.5em;
     font-weight: 800;
-    color: #42b983;
+    color: #42b983 !important;
     margin: 0;
     line-height: 1.2;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
@@ -31,7 +31,7 @@ title: Home
 
   .hero-subtitle {
     font-size: 1.3em;
-    color: #666;
+    color: #666 !important;
     margin: 20px 0 0 0;
     font-weight: 400;
   }
@@ -79,25 +79,25 @@ title: Home
 
   .section-icon {
     font-size: 2em;
-    color: #42b983;
+    color: #42b983 !important;
   }
 
   .section-title {
     font-size: 1.5em;
     margin: 0;
-    color: #333;
+    color: #333 !important;
     font-weight: 600;
   }
 
   .section-content {
-    color: #666;
+    color: #666 !important;
     line-height: 1.6;
     font-size: 1.1em;
   }
 
   .section-placeholder {
     font-style: italic;
-    color: #999;
+    color: #999 !important;
     background: #f8f9fa;
     padding: 20px;
     border-radius: 8px;
