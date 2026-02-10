@@ -2,5 +2,6 @@ _site/
 _draft/
 .jekyll-cache/
 CLAUDE.md
-SKILL.md            
+SKILL.md
 nul
+Gemfile.lock
